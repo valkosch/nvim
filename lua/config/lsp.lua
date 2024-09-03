@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'lua_ls', 'clangd' },
+    ensure_installed = { 'pylsp', 'lua_ls', 'clangd', 'jdtls'},
 })
 
 -- Set different settings for different languages' LSP
@@ -68,5 +68,8 @@ lspconfig.clangd.setup({
 })
 
 lspconfig.lua_ls.setup({
+	on_attach = on_attach,
+})
+lspconfig.jdtls.setup({
 	on_attach = on_attach,
 })
