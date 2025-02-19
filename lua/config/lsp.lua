@@ -7,7 +7,6 @@ require('mason').setup({
         }
     }
 })
-
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
     ensure_installed = { 'pylsp', 'lua_ls', 'clangd', 'jdtls'},
@@ -71,5 +70,8 @@ lspconfig.lua_ls.setup({
 	on_attach = on_attach,
 })
 lspconfig.jdtls.setup({
+	on_attach = on_attach,
+})
+lspconfig.biome.setup({
 	on_attach = on_attach,
 })

@@ -40,5 +40,41 @@ require("lazy").setup({
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
+
+    -- TreeSitter
+    "nvim-tree/nvim-tree.lua",
+
+    -- Terminal
+    "voldikss/vim-floaterm",
+
+    -- Visual
+    {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    },
+
+    -- Util
+    "numToStr/Comment.nvim",
+    { 'prettier/vim-prettier', run = 'npm install' },
+
+    -- Fuzzy Finder (files, lsp, etc)
+  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } },
+
+  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 },
+
+  -- Dashboard
+    {
+      'nvimdev/dashboard-nvim',
+      event = 'VimEnter',
+      config = function()
+        require('dashboard').setup {
+          -- config
+        }
+      end,
+      dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    }
 })
 
