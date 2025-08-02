@@ -72,6 +72,6 @@ lspconfig.lua_ls.setup({
 lspconfig.jdtls.setup({
 	on_attach = on_attach,
 })
-lspconfig.biome.setup({
+lspconfig.quick_lint_js.setup({
 	on_attach = on_attach,
 })
